@@ -16,7 +16,7 @@ public class MozillaFilter implements Filter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
-        if (getUserAgent(httpServletRequest).startsWith("Chrome")) {
+        if (getUserAgent(httpServletRequest).startsWith("Mozilla")) {
             servletResponse.getWriter().println("You cannot use the Mozilla :(. This browser is not allowed");
         } else {
             filterChain.doFilter(servletRequest, servletResponse);
